@@ -30,145 +30,146 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.RootNote = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.RootNoteLabel = new System.Windows.Forms.Label();
+            this.ChordTypeLabel = new System.Windows.Forms.Label();
             this.ChordType = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.GenerateChordButton = new System.Windows.Forms.Button();
+            this.CurrentChordLabel = new System.Windows.Forms.Label();
             this.ChordDisplay = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.StartingString = new System.Windows.Forms.ComboBox();
+            this.CurrentRoot = new System.Windows.Forms.Label();
+            this.CurrentType = new System.Windows.Forms.Label();
+            this.fret = new System.Windows.Forms.Label();
+            this.StartingFret = new System.Windows.Forms.Label();
+            this.IncrementTuning = new System.Windows.Forms.NumericUpDown();
+            this.Tuning = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ChordDisplay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IncrementTuning)).BeginInit();
             this.SuspendLayout();
             // 
             // RootNote
             // 
-            this.RootNote.AccessibleName = "Root Note";
+            resources.ApplyResources(this.RootNote, "RootNote");
             this.RootNote.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RootNote.FormattingEnabled = true;
             this.RootNote.Items.AddRange(new object[] {
-            "Any Note",
-            "A",
-            "A#/Bb",
-            "B",
-            "C",
-            "C#/Db",
-            "D",
-            "D#/Eb",
-            "E",
-            "F",
-            "F#/Gb",
-            "G",
-            "G#/Ab"});
-            this.RootNote.Location = new System.Drawing.Point(13, 25);
+            resources.GetString("RootNote.Items"),
+            resources.GetString("RootNote.Items1"),
+            resources.GetString("RootNote.Items2"),
+            resources.GetString("RootNote.Items3"),
+            resources.GetString("RootNote.Items4"),
+            resources.GetString("RootNote.Items5"),
+            resources.GetString("RootNote.Items6"),
+            resources.GetString("RootNote.Items7"),
+            resources.GetString("RootNote.Items8"),
+            resources.GetString("RootNote.Items9"),
+            resources.GetString("RootNote.Items10"),
+            resources.GetString("RootNote.Items11"),
+            resources.GetString("RootNote.Items12")});
             this.RootNote.Name = "RootNote";
-            this.RootNote.Size = new System.Drawing.Size(121, 21);
-            this.RootNote.TabIndex = 0;
             this.RootNote.SelectedIndexChanged += new System.EventHandler(this.RootNote_SelectedIndexChanged);
             // 
-            // label1
+            // RootNoteLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Root Note";
+            resources.ApplyResources(this.RootNoteLabel, "RootNoteLabel");
+            this.RootNoteLabel.Name = "RootNoteLabel";
             // 
-            // label2
+            // ChordTypeLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Chord Type";
+            resources.ApplyResources(this.ChordTypeLabel, "ChordTypeLabel");
+            this.ChordTypeLabel.Name = "ChordTypeLabel";
             // 
             // ChordType
             // 
             this.ChordType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ChordType.FormattingEnabled = true;
             this.ChordType.Items.AddRange(new object[] {
-            "Any Type",
-            "Major",
-            "Minor"});
-            this.ChordType.Location = new System.Drawing.Point(13, 71);
+            resources.GetString("ChordType.Items"),
+            resources.GetString("ChordType.Items1"),
+            resources.GetString("ChordType.Items2")});
+            resources.ApplyResources(this.ChordType, "ChordType");
             this.ChordType.Name = "ChordType";
-            this.ChordType.Size = new System.Drawing.Size(121, 21);
-            this.ChordType.TabIndex = 3;
             this.ChordType.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // button1
+            // GenerateChordButton
             // 
-            this.button1.Location = new System.Drawing.Point(16, 227);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Generate Chord";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.generateChord);
+            resources.ApplyResources(this.GenerateChordButton, "GenerateChordButton");
+            this.GenerateChordButton.Name = "GenerateChordButton";
+            this.GenerateChordButton.UseVisualStyleBackColor = true;
+            this.GenerateChordButton.Click += new System.EventHandler(this.generateChord);
             // 
-            // label3
+            // CurrentChordLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(176, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Current Chord";
+            resources.ApplyResources(this.CurrentChordLabel, "CurrentChordLabel");
+            this.CurrentChordLabel.Name = "CurrentChordLabel";
             // 
             // ChordDisplay
             // 
-            this.ChordDisplay.Image = ((System.Drawing.Image)(resources.GetObject("ChordDisplay.Image")));
-            this.ChordDisplay.Location = new System.Drawing.Point(160, 91);
+            resources.ApplyResources(this.ChordDisplay, "ChordDisplay");
             this.ChordDisplay.Name = "ChordDisplay";
-            this.ChordDisplay.Size = new System.Drawing.Size(195, 159);
-            this.ChordDisplay.TabIndex = 7;
             this.ChordDisplay.TabStop = false;
             // 
-            // label4
+            // CurrentRoot
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Starting String";
+            resources.ApplyResources(this.CurrentRoot, "CurrentRoot");
+            this.CurrentRoot.Name = "CurrentRoot";
             // 
-            // StartingString
+            // CurrentType
             // 
-            this.StartingString.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.StartingString.FormattingEnabled = true;
-            this.StartingString.Items.AddRange(new object[] {
-            "Any String",
-            "Low E",
-            "A",
-            "D",
-            "G",
-            "B",
-            "High E"});
-            this.StartingString.Location = new System.Drawing.Point(13, 117);
-            this.StartingString.Name = "StartingString";
-            this.StartingString.Size = new System.Drawing.Size(121, 21);
-            this.StartingString.TabIndex = 9;
+            resources.ApplyResources(this.CurrentType, "CurrentType");
+            this.CurrentType.Name = "CurrentType";
+            // 
+            // fret
+            // 
+            resources.ApplyResources(this.fret, "fret");
+            this.fret.Name = "fret";
+            // 
+            // StartingFret
+            // 
+            resources.ApplyResources(this.StartingFret, "StartingFret");
+            this.StartingFret.Name = "StartingFret";
+            // 
+            // IncrementTuning
+            // 
+            resources.ApplyResources(this.IncrementTuning, "IncrementTuning");
+            this.IncrementTuning.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.IncrementTuning.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            -2147483648});
+            this.IncrementTuning.Name = "IncrementTuning";
+            // 
+            // Tuning
+            // 
+            resources.ApplyResources(this.Tuning, "Tuning");
+            this.Tuning.Name = "Tuning";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 262);
-            this.Controls.Add(this.StartingString);
-            this.Controls.Add(this.label4);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.Controls.Add(this.Tuning);
+            this.Controls.Add(this.IncrementTuning);
+            this.Controls.Add(this.StartingFret);
+            this.Controls.Add(this.fret);
+            this.Controls.Add(this.CurrentType);
+            this.Controls.Add(this.CurrentRoot);
             this.Controls.Add(this.ChordDisplay);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CurrentChordLabel);
+            this.Controls.Add(this.GenerateChordButton);
             this.Controls.Add(this.ChordType);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ChordTypeLabel);
+            this.Controls.Add(this.RootNoteLabel);
             this.Controls.Add(this.RootNote);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Form1";
-            this.Text = "Chord Library";
             ((System.ComponentModel.ISupportInitialize)(this.ChordDisplay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IncrementTuning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,14 +178,18 @@
         #endregion
 
         private System.Windows.Forms.ComboBox RootNote;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label RootNoteLabel;
+        private System.Windows.Forms.Label ChordTypeLabel;
         private System.Windows.Forms.ComboBox ChordType;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button GenerateChordButton;
+        private System.Windows.Forms.Label CurrentChordLabel;
         private System.Windows.Forms.PictureBox ChordDisplay;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox StartingString;
+        private System.Windows.Forms.Label CurrentRoot;
+        private System.Windows.Forms.Label CurrentType;
+        private System.Windows.Forms.Label fret;
+        private System.Windows.Forms.Label StartingFret;
+        private System.Windows.Forms.NumericUpDown IncrementTuning;
+        private System.Windows.Forms.Label Tuning;
 
     }
 }

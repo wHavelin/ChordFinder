@@ -9,23 +9,40 @@ namespace WindowsFormsApplication4
     class Chord
     {
         private string name;
-        private int[] notes; // 1 = A ... 12 = G# and so on
+        private int[] frets_by_string; 
         private String base_type;
         public Chord()
         {
 
         }
 
-        public Chord(int[] chord_notes, String type, String chord_name)
+        public Chord(int[] frets)
         {
-            notes = chord_notes;
+            frets_by_string = frets;
+        }
+
+        public Chord(int[] frets, String type, String chord_name)
+        {
+            frets_by_string = frets;
             name = chord_name;
             base_type = type;
         }
 
+        public int[] get_frets_by_string()
+        {
+            return frets_by_string;
+        }
+
         public override string ToString() 
         {
-            return name;
+            string return_string = "";
+            for (int i = 0; i < 6; )
+            {
+                return_string += frets_by_string[i];
+                return_string += " ";
+                ++i;
+            }
+                return return_string;
         }
 
     }
